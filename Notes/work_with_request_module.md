@@ -89,11 +89,36 @@ print(response.json())
 
 ---
 
-## **7. Using Sessions for Persistent Connections**
+## **6. Using Sessions for Persistent Connections**
 ```python
 session = requests.Session()
 response = session.get("https://example.com/protected")
 print(response.status_code)
+```
+
+---
+
+## **7. Uploading file using request**
+```python
+url = "https://httpbin.org/post"
+files = {"file": open("sample.txt", "rb")}
+response = requests.post(url, files=files)
+print(response.json())
+```
+
+---
+
+## **7. Download image file using request**
+```python
+url = "https://via.placeholder.com/150"
+response = requests.get(url)
+
+if response.status_code == 200:
+    with open("image.jpg", "wb") as file:
+        file.write(response.content)
+    print("Image downloaded successfully.")
+else:
+    print("Failed to download image.")
 ```
 
 ---
