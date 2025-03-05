@@ -17,12 +17,12 @@ BeautifulSoup requires an HTML/XML document as input. Typically, we fetch web pa
 
 ### **Example: Fetching and Parsing an HTML Page**
 ```python
-import requests
+import requets
 from bs4 import BeautifulSoup
 
 # Fetch HTML content from a webpage
 url = "https://example.com"
-response = requests.get(url)
+response = requets.get(url)
 
 # Create a BeautifulSoup object
 soup = BeautifulSoup(response.text, "html.parser")
