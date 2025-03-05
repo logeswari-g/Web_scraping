@@ -93,3 +93,74 @@ tagname[attribute='value']
 ## **4. When to Use XPath vs. CSS Selectors?**
 - Use **XPath** when dealing with complex XML/HTML structures or when selecting based on text.
 - Use **CSS Selectors** for faster and simpler selections when working with HTML.
+
+**Assume we want to scrape product titles from an web page.**
+
+```
+<html>
+  <body>
+    <div class="news">
+      <h2>Breaking News</h2>
+      <p class="description">This is today's top story.</p>
+      <a href="https://example.com/story">Read More</a>
+    </div>
+  </body>
+</html>
+
+```
+
+**Common XPath Queries**
+
+1) Selecting the <h2> tag (by element name)
+
+```
+//h2
+```
+
+2) Selecting the <p> tag inside div with class news (by class attribute)
+
+```
+//div[@class='news']/p
+```
+
+3) Extracting the link inside <a> (href attribute)
+
+```
+//a/@href
+```
+
+4) Finding any <p> element that contains the word "top story"
+
+```
+//p[contains(text(), 'top story')]
+```
+
+**3. CSS Selectors Explained with Example**
+
+CSS Selectors are used to select elements based on their ID, class, attributes, and hierarchy.
+
+1) Selecting the <h2> tag
+
+```
+h2
+```
+
+2) Selecting <p> inside .news div
+
+```
+.news p
+```
+
+3) Extracting the link inside <a>
+
+```
+a[href]
+```
+
+4) Finding elements that contain "top story" (CSS can't check text directly)
+
+```
+p.description
+```
+
+
