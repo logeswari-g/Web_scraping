@@ -144,4 +144,61 @@ match = re.search(pattern, text)
 print(match.group())  # Output: (123) 456-7890
 ```
 
+# **Regex Flags: `i`, `g`, `s`**  
+
+## **1. Introduction to Regex Flags**  
+Regex (Regular Expressions) are used for pattern matching in text. Flags modify how the regex behaves.  
+
+The three commonly used flags are:  
+- **`i` (Ignore Case)** → Makes the pattern case-insensitive.  
+- **`g` (Global Search)** → Finds all matches instead of stopping at the first one.  
+- **`s` (Dotall Mode)** → Allows `.` to match newline characters (`\n`).  
+
+---
+
+## **2. Explanation of Flags**  
+
+### **1. `i` - Case Insensitive Matching**  
+- By default, regex is case-sensitive.  
+- The `i` flag makes it match letters in any case.  
+- Example:  
+  ```javascript
+  /hello/i.test("HELLO"); // true
+  ```
+
+### **2. `g` - Global Search**  
+- By default, regex stops after the first match.  
+- The `g` flag ensures it finds all occurrences.  
+- Example:  
+  ```javascript
+  "banana".match(/a/g); // ["a", "a", "a"]
+  ```
+
+### **3. `s` - Dotall Mode**  
+- Normally, `.` does **not** match newlines (`\n`).  
+- The `s` flag allows `.` to match **any** character, including newlines.  
+- Example:  
+  ```javascript
+  /a.b/s.test("a\nb"); // true
+  ```
+
+---
+
+## **3. Example Usage in JavaScript**  
+```javascript
+const text = "Hello\nhello HeLLo";
+const regex = /hello/igs; // Case-insensitive, global, dotall mode
+
+console.log(text.match(regex)); // ["Hello", "hello", "HeLLo"]
+```
+
+---
+
+| Flag | Description | Example |
+|------|------------|---------|
+| `i`  | Case-insensitive match | `/hello/i` matches `"HELLO"` |
+| `g`  | Global search (find all matches) | `/a/g` finds all `"a"` in `"banana"` |
+| `s`  | Dot matches newlines (`\n`) | `/a.b/s` matches `"a\nb"` |
+
+These flags can be combined, for example, `/pattern/igs` for case-insensitive, global, and dotall matching.
 ---
