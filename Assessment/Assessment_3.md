@@ -1,7 +1,4 @@
 # **Practical Questions on the `requests` Module in Python**
-
-The following are **10 practical exercises** to help you master the `requests` module in Python.
-
 ---
 
 ## **1. Basic GET Request**
