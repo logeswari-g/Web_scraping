@@ -1,4 +1,4 @@
-# 20 Practical Questions on XPath and CSS Selectors
+# Practical Questions on XPath and CSS Selectors
 
 ## **Basic Selection**
 1. **XPath**: Write an XPath to select all `<div>` elements on a page.  
