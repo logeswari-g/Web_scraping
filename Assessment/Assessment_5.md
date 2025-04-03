@@ -1,4 +1,4 @@
-# 20 Practical Questions on BeautifulSoup
+# Practical Questions on BeautifulSoup
 
 ## **Basic Selection**
 1. How do you install BeautifulSoup in Python?
