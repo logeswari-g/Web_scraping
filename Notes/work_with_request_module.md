@@ -32,13 +32,23 @@ print(response.json())  # JSON response
 The `POST` method submits data to a server.
 ```python
 import requests
-url = "https://jsonplaceholder.typicode.com/posts"
-data = {"title": "Test Post", "body": "This is a test.", "userId": 1}
-response = requests.post(url, json=data)
-print(response.status_code)
-print(response.json())
-```
 
+# Define login URL and credentials
+login_url = "https://quotes.toscrape.com/login"
+data = {
+    "username": "admin",
+    "password": "admin"
+}
+
+# Start a session
+session = requests.Session()
+
+# Send POST request to login
+response = session.post(login_url, data=data,headers={"Referer": "https://quotes.toscrape.com/login"})
+print(response.status_code)
+with open("final.html", 'wb') as file:
+    file.write(response.content)
+```
 ---
 
 ## **3. Handling Response Data**
